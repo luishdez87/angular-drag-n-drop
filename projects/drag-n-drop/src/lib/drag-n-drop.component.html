@@ -1,0 +1,6 @@
+<div class="dropzone" #dropzone lfDragNDrop (dropFiles)="onFileDropped($event)">
+  <div class="padded">
+    <input type="file" #fileInputRef id="fileInputRef" (change)="fileHandler($event.target.files)">
+    <label #messageLabel for="fileInputRef"> Browse for file </label>
+  </div>
+</div>

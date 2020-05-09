@@ -14,10 +14,18 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "drag-n-drop": [
+        "dist/drag-n-drop/drag-n-drop",
+        "dist/drag-n-drop"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "strictInjectionParameters": true,
+    "enableIvy": false
+
   }
 }
