@@ -4,19 +4,84 @@ Drag and drop component for angular, without any dependencies.
 
 You simply drag and drop, or click inside.
 
+![](https://github.com/luishdez87/angular-drag-n-drop/blob/master/projects/demo/src/assets/normal-view.png?raw=true)
 
-## Build
+## Installation
 
-Run `ng build drag-n-drop` to build the project. The build artifacts will be stored in the `dist/` directory.
+### NPM
 
-## Publishing
+## Implementation
 
-After building your library with `ng build drag-n-drop`, go to the dist folder `cd dist/drag-n-drop` and run `npm publish`.
+Just add the `DragNDropModule` to your app.module.ts:
 
-## Running unit tests
+```javascript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-Run `ng test drag-n-drop` to execute the unit tests via [Karma](https://karma-runner.github.io).
+import { AppComponent } from './app.component';
+import { DragNDropModule } from 'drag-n-drop';
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    DragNDropModule
+  ],
+  providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
+
+and use it in your html:
+
+```html
+
+  <lf-drag-n-drop 
+    multiple="true"
+    labelBackground="green"
+    color="white"
+    (fileDropped)="handleFiles($event)">
+  </lf-drag-n-drop>
+
+```
+
+## Properties
+
+| Name  | Optional  | Description |
+| :------------ |:---------------:| -----:|
+| (fileDropped)      | No | Returns the file (s) in an event |
+| multiple   (boolean)   | Yes        |   Allows you to recieve one or multiple files, this value is a boolean and false  by default |
+| labelBackground   (string)   | Yes | Changes the label background color |
+| color (string)      | Yes | Changes the label font color |
+
+## Examples
+
+```html
+
+  <lf-drag-n-drop 
+    multiple="true"
+    labelBackground="green"
+    color="white"
+    (fileDropped)="handleFiles($event)">
+  </lf-drag-n-drop>
+
+```
+![](https://github.com/luishdez87/angular-drag-n-drop/blob/master/projects/demo/src/assets/bg-changed.png?raw=true)
+
+```html
+
+  <lf-drag-n-drop 
+    labelBackground="white"
+    color="purple"
+    (fileDropped)="handleFiles($event)">
+  </lf-drag-n-drop>
+
+```
+![](https://github.com/luishdez87/angular-drag-n-drop/blob/master/projects/demo/src/assets/bg-and-color.png?raw=true)
+

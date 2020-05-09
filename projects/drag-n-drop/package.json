@@ -1,6 +1,10 @@
 {
   "name": "drag-n-drop",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luishdez87/angular-drag-n-drop"
+  },
   "peerDependencies": {
     "@angular/common": "^9.1.6",
     "@angular/core": "^9.1.6",

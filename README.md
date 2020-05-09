@@ -1,27 +1,91 @@
-# DragNdrop
+# Angular Drag and Drop file component
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
+Drag and drop component for angular, without any dependencies.
 
-## Development server
+You simply drag and drop, or click inside.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![](https://github.com/luishdez87/angular-drag-n-drop/blob/master/projects/demo/src/assets/normal-view.png?raw=true)
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### NPM
 
-## Build
+### DEMO
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Clone the repository run `npm install` and run `ng serve demo`
 
-## Running unit tests
+## Implementation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Just add the `DragNDropModule` to your app.module.ts:
 
-## Running end-to-end tests
+```javascript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+import { AppComponent } from './app.component';
+import { DragNDropModule } from 'drag-n-drop';
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    DragNDropModule
+  ],
+  providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
+
+and use it in your html:
+
+```html
+
+  <lf-drag-n-drop 
+    multiple="true"
+    labelBackground="green"
+    color="white"
+    (fileDropped)="handleFiles($event)">
+  </lf-drag-n-drop>
+
+```
+
+## Properties
+
+| Name  | Optional  | Description |
+| :------------ |:---------------:| -----:|
+| (fileDropped)      | No | Returns the file (s) in an event |
+| multiple   (boolean)   | Yes        |   Allows you to recieve one or multiple files, this value is a boolean and false  by default |
+| labelBackground   (string)   | Yes | Changes the label background color |
+| color (string)      | Yes | Changes the label font color |
+
+## Examples
+
+```html
+
+  <lf-drag-n-drop 
+    multiple="true"
+    labelBackground="green"
+    color="white"
+    (fileDropped)="handleFiles($event)">
+  </lf-drag-n-drop>
+
+```
+![](https://github.com/luishdez87/angular-drag-n-drop/blob/master/projects/demo/src/assets/bg-changed.png?raw=true)
+
+```html
+
+  <lf-drag-n-drop 
+    labelBackground="white"
+    color="purple"
+    (fileDropped)="handleFiles($event)">
+  </lf-drag-n-drop>
+
+```
+![](https://github.com/luishdez87/angular-drag-n-drop/blob/master/projects/demo/src/assets/bg-and-color.png?raw=true)
+
