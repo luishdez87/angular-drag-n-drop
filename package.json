@@ -1,6 +1,13 @@
 {
   "name": "drag-ndrop",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luishdez87/angular-drag-n-drop"
+  },
+  "keywords": [
+    "angular", "file drop", "drag and drop", "angular2", "typescript"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
