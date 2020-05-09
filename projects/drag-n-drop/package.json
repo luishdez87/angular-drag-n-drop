@@ -1,6 +1,6 @@
 {
-  "name": "drag-n-drop",
-  "version": "0.0.1",
+  "name": "lf-angular-file-drop",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/luishdez87/angular-drag-n-drop"

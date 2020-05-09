@@ -10,6 +10,8 @@ You simply drag and drop, or click inside.
 
 ### NPM
 
+`npm i lf-angular-file-drop`
+
 ## Implementation
 
 Just add the `DragNDropModule` to your app.module.ts:

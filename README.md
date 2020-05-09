@@ -1,6 +1,6 @@
 # Angular Drag and Drop file component
 
-Drag and drop component for angular, without any dependencies.
+Drag and drop files component for angular, without any dependencies.
 
 You simply drag and drop, or click inside.
 
@@ -9,6 +9,8 @@ You simply drag and drop, or click inside.
 ## Installation
 
 ### NPM
+
+`npm i lf-angular-file-drop`
 
 ### DEMO
 
